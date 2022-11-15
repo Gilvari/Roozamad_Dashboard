@@ -1,0 +1,133 @@
+<div class="row" ng-controller="profileListController as vm">
+
+    <div class="col-12">
+        <div class="container">
+            <form ng-submit="vm.search(frm)">
+                <span class="flex margin-bottom-5">
+                        <span class="flex margin-bottom-5">
+                                <select style="width: 100%;" id="profile-dropdown" class="k-rtl full-width" kendo-drop-down-list k-options="vm.dropDownOptions"
+                                    ng-model="vm.searchKeyword"></select>
+                            </span>
+                        
+                    <button style="width: 20%;" class="k-button" type="submit">جستجو</button>
+                </span>
+               
+                     
+                    
+            </form>
+        </div>
+    </div>
+
+
+    <!-- <div class="col-2">
+        <div class="container">
+            <span class="flex">
+                <img style="padding: 10px; float:right; max-width: 200px; max-height: 200px; min-height: 80px; min-width: 80px; border: 1px solid #bbb"
+                    ng-src="{{vm.profileData.image}}" />
+                <p style="padding: 10px;"> {{vm.profileData.abstract}} </p>
+            </span>
+        </div>
+    </div> -->
+
+    <div class="col-12" style="overflow-y: scroll; height:100px; margin: 20px;">
+       
+            <div class="container">
+                    <h4>
+                            نقل قول ها:
+                        </h4>
+                <div class="inline-division">
+                    <div class="card" ng-repeat="item in vm.profileData.quote">
+                        <img ng-src="/images/logo/{{item.agencyLogo}}" />
+                        <div class="content">
+                            <span class="title">
+                                <a 
+                                style="color: dodgerblue"
+                                href="#">{{item.topic}}</a>
+                            </span>
+                            <span  class="resource">
+                                   {{item.agency}}
+                            </span>
+                            <span style=" margin: 5px;" class="abstract">
+                                {{item.quote}}
+                            </span>
+                            <span class="date" style="color: dodgerblue;font-size: 12px;">
+                                {{item.formattedPublishDateTime}}
+                            </span>
+                        </div>
+                    </div>
+    
+    
+                </div>
+    
+            </div>
+        </div>
+
+    <div class="col-7">
+        <div class="container">
+                <h4>
+                       گراف ارتباط
+                    </h4>
+            <div id="sigma-container"></div>
+        </div>
+    </div>
+
+    <div class="col-5">
+   
+        <div class="container">
+                <h4>
+                        نمودار تحلیل احساسات
+                    </h4>
+            <div id="chart-elem" kendo-chart k-options="vm.chartOptions" style="height: 350px"></div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="container">
+            <h4>
+                روند زمانی پوشش اخبار
+            </h4>
+            <div kendo-tab-strip k-options="vm.tabOptions">
+               
+                <div class="col-12" style="padding: 1em">
+               
+                                 
+                    <div class="col-12">
+                        <div id="today-topics"></div>
+                    </div>
+                </div>
+                
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12" style="overflow-y: scroll; height:400px;">
+        <div class="container">
+            <h4>
+                اخبار مرتبط در شبکه های اجتماعی
+            </h4>
+            <div class="inline-division">
+                <div class="card" ng-repeat="item in vm.profileData.listNews">
+                    <img ng-src="/images/logo/twitter.png" />
+                    <div class="content">
+                        <span class="title">
+                            <a href="#">{{item.topic}}</a>
+                        </span>
+                        <span class="resource">
+                            {{item.agency}}
+                        </span>
+                        <span class="abstract">
+                            {{item.headline}}
+                        </span>
+                        <span class="date">
+                            {{item.formattedPublishDateTime}}
+                        </span>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

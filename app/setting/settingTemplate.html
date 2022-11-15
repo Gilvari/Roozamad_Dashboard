@@ -1,0 +1,172 @@
+<div class="row" ng-controller="settingController as vm">
+    <div class="col-12">
+        <div class="container">
+            <div kendo-tab-strip="tabstrip" k-options="vm.tabOptions">
+                <ul>
+                    <li class="k-state-active">رسانه های خبری</li>
+                    <li>پروفایل</li>
+                    <li>تلگرام</li>
+                    <li>مدیریت کاربران</li>
+                </ul>
+
+
+                <div class="tab">
+                    <div class="col-12">
+                        <form ng-submit="vm.searchAgency(frm)">
+
+                            <lable>عنوان:
+                                <span class="flex margin-bottom-5">
+                                    <input class="k-rtl k-input base-input base-width" type="text" placeholder="عنوان"
+                                        ng-model="vm.agency.title">
+                                </span>
+                            </lable>
+
+                            <lable>آدرس:
+                                <span class="flex margin-bottom-5">
+                                    <input class="k-rtl k-input base-input base-width" type="text" placeholder="آدرس"
+                                        ng-model="vm.agency.address">
+                                </span>
+                            </lable>
+
+                            <lable>دسته:
+                                <span class="flex margin-bottom-5">
+                                    <select id="category-dropdown" class="k-rtl base-width" kendo-drop-down-list
+                                        k-options="vm.dropDownOptions" ng-model="vm.agency.category"></select>
+                                </span>
+                            </lable>
+
+                            <br />
+                            <button kendo-button type="submit" class="base-button">
+                                <i> ذخیره</i>
+                            </button>
+
+                            <button kendo-button ng-click="vm.editAgency()" class="base-button">
+                                <i> ویرایش</i>
+                            </button>
+
+                            <button kendo-button ng-click="vm.deleteAgency()" class="base-button">
+                                <i> حذف</i>
+                            </button>
+                        </form>
+                        <br />
+                        <kendo-grid id="agency" class="k-rtl" options="vm.agencyGridOptions"></kendo-grid>
+                    </div>
+                </div>
+
+                <div class="tab">
+                    <div class="col-12">
+                        <form ng-submit="vm.searchProfile(frm)">
+
+                            <lable>عنوان:
+                                <span class="flex margin-bottom-5">
+                                    <input class="k-rtl k-input base-input base-width" type="text" placeholder="عنوان"
+                                        ng-model="vm.profile.title">
+                                </span>
+                            </lable>
+
+                            <br />
+                            <button kendo-button type="submit" class="base-button">
+                                <i> ذخیره</i>
+                            </button>
+
+                            <button kendo-button ng-click="vm.editProfile()" class="base-button">
+                                <i> ویرایش</i>
+                            </button>
+
+                            <button kendo-button ng-click="vm.deleteProfile()" class="base-button">
+                                <i> حذف</i>
+                            </button>
+                        </form>
+                        <kendo-grid id="recent-profile" class="k-rtl" options="vm.profileGridOptions"></kendo-grid>
+                    </div>
+                </div>
+
+
+                <div class="tab">
+                    <div class="col-12">
+                        <form ng-submit="vm.searchTelegram(frm)">
+
+                            <lable>عنوان:
+                                <span class="flex margin-bottom-5">
+                                    <input class="k-rtl k-input base-input base-width" type="text" placeholder="عنوان"
+                                        ng-model="vm.telegram.title">
+                                </span>
+                            </lable>
+
+                            <lable>آدرس:
+                                <span class="flex margin-bottom-5">
+                                    <input class="k-rtl k-input base-input base-width" type="text" placeholder="آدرس"
+                                        ng-model="vm.telegram.address">
+                                </span>
+                            </lable>
+
+                            <br />
+                            <button kendo-button type="submit" class="base-button">
+                                <i> ذخیره</i>
+                            </button>
+
+                            <button kendo-button ng-click="vm.editTelegram()" class="base-button">
+                                <i> ویرایش</i>
+                            </button>
+
+                            <button kendo-button ng-click="vm.deleteTelegram()" class="base-button">
+                                <i> حذف</i>
+                            </button>
+                        </form>
+                        <kendo-grid id="recent-telegram" class="k-rtl" options="vm.telegramGridOptions"></kendo-grid>
+                    </div>
+                </div>
+
+                <div class="tab">
+                    <div class="col-12">
+                        <form ng-submit="vm.searchTelegram(frm)">
+
+                            <lable>نام:
+                                <span class="flex margin-bottom-5">
+                                    <input class="k-rtl k-input base-input base-width" type="text" placeholder="نام"
+                                        ng-model="vm.user.firstName">
+                                </span>
+                            </lable>
+
+                            <lable>نام خانوادگی:
+                                <span class="flex margin-bottom-5">
+                                    <input class="k-rtl k-input base-input base-width" type="text" placeholder="نام خانوادگی"
+                                        ng-model="vm.user.lastName">
+                                </span>
+                            </lable>
+
+                            <lable>آدرس ایمیل:
+                                <span class="flex margin-bottom-5">
+                                    <input class="k-rtl k-input base-input base-width" type="email" placeholder="آدرس ایمیل"
+                                        ng-model="vm.user.mailAddress">
+                                </span>
+                            </lable>
+
+                            <lable>رمز عبور:
+                                <span class="flex margin-bottom-5">
+                                    <input class="k-rtl k-input base-input base-width" type="password" placeholder="آدرس ایمیل"
+                                        ng-model="vm.user.password">
+                                </span>
+                            </lable>
+
+                            <br />
+                            <button kendo-button type="submit" class="base-button">
+                                <i> ذخیره</i>
+                            </button>
+
+                            <button kendo-button ng-click="vm.editTelegram()" class="base-button">
+                                <i> ویرایش</i>
+                            </button>
+
+                            <button kendo-button ng-click="vm.deleteTelegram()" class="base-button">
+                                <i> حذف</i>
+                            </button>
+                        </form>
+                        <kendo-grid id="users" class="k-rtl" options="vm.userGridOptions"></kendo-grid>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

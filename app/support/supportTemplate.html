@@ -1,0 +1,16 @@
+<div class="row" ng-controller="supportController as vm">
+    <div class="container">
+        <div class="col-12">
+            <form ng-submit="vm.support(frm)">
+                <p><br><input class="k-rtl k-input base-input" type="text" placeholder="عنوان" ng-model="vm.title"></p>
+                <p><br><input class="k-rtl k-input base-input" type="text" placeholder="محل مشکل" ng-model="vm.place"></p>
+                <p><br><textarea cols="5" rows="5" class="k-rtl k-input base-input" style="min-height: 300px; height: 200px;" type="textarea" placeholder="شرح مشکل" ng-model="vm.description"></textarea></p>
+              
+                <p><br><div style="color: crimson;font-size: 10px;">حداکثر حجم اپلود ۸ کیلوبایت می باشد</div><input ng-model="vm.file"
+                    onchange="angular.element(this).scope().file_changed(this)"
+                    type="file" accept="image/*" /></p>
+                <p><br><button style="width: 20%;" class="k-button" type="submit">ارسال درخواست</button></p>
+            </form>
+        </div>
+    </div>
+</div>

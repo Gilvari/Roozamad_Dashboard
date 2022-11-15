@@ -1,0 +1,30 @@
+<div ng-controller="loginController as vm">
+
+    <div style="
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+    left: 0px;
+    background-image: url('/images/3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0px;
+">
+<div style="
+background-color: rgba(0, 0, 0, 0.72);
+">
+    <div style="opacity: 0.8;" class="col-6 login-form">
+        <img src="../images/IRILOGO.png">
+        <form ng-submit="vm.login()">
+            <!-- <label for="uname"><b>نام کاربری</b></label> -->
+            <input type="text" placeholder="Enter Username" name="username" required ng-model="vm.username">
+
+            <!-- <label for="psw"><b>پسورد</b></label> -->
+            <input type="password" placeholder="Enter Password" name="password" required ng-model="vm.password">
+
+            <button style="width: 50%; margin: 8px 24%;" class="login-button" type="submit">ورود</button>
+        </form>
+    </div>
+</div>
+</div>
+</div>

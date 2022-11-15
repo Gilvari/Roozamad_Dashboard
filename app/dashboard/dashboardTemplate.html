@@ -1,0 +1,109 @@
+<div class="row" ng-controller="dashboardController as vm">
+    <div class="spinner" ng-show="loading"><img src="http://i49.tinypic.com/j5z8mb.gif" alt="Yükleniyor..." /></div>
+    <button class="login-button" ng-click="vm.refresh()">به روز رسانی اطلاعات</button>
+    <div class="col-3">
+        <div class="container from-center tile red">
+            <span class="gray">خبرهای فوری امروز</span>
+            <br><br>
+            <span class="data"> {{vm.dashboardSummery.todayCriticalNewsCount}}</span>
+            <hr>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="container from-center tile green">
+            <span class="gray">تعداد کل اخبار</span>
+            <br><br>
+            <span class="data"> {{vm.dashboardSummery.totalNewsCount}}</span>
+            <hr>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="container from-center tile yellow">
+            <span class="gray">سامانه های خبری</span>
+            <br><br>
+            <span class="data">{{vm.dashboardSummery.agencyCount}}</span>
+            <hr>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="container from-center tile blue">
+            <span class="gray">خبرهای امروز</span>
+            <br><br>
+            <span class="data">{{vm.dashboardSummery.todayNewsCount}}</span>
+            <hr>
+        </div>
+    </div>
+
+
+    <div class="col-12">
+        <div class="container">
+            <kendo-grid id="recent-news" class="k-rtl" options="vm.mainGridOptions"></kendo-grid>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="container">
+            <div kendo-tab-strip k-options="vm.tabOptions">
+                
+                <ul>
+                    <li class="k-state-active">روز اخیر</li>
+                    <li>هفته اخیر</li>
+                    <li>ماه اخیر</li>
+                </ul>
+
+                <div class="col-12" style="padding: 1em">
+                    <div class="col-6">
+                        <tag-cloud words="todayWords" style="width: 80%; height: 402px;" auto-resize="true" delay="15"
+                            steps="7" font-size="{from:0.12, to:0.04}"></tag-cloud>
+                    </div>                    
+                    <div class="col-5">
+                        
+                        <div id="today-topics"></div>
+                    </div>
+                </div>
+                <div class="col-12" style="padding: 1em">
+                    <div class="col-6">
+                        <tag-cloud words="weekWords" style="width: 80%; height: 402px;" auto-resize="true" delay="15"
+                            steps="7" font-size="{from:0.12, to:0.04}"></tag-cloud>
+                    </div>                   
+                    <div class="col-5">
+                        
+                        <div id="week-topics"></div>
+                    </div>
+
+                </div>
+                <div class="col-12" style="padding: 1em">
+                    <div class="col-6">
+                        <tag-cloud words="monthWords" style="width: 80%; height: 402px;" auto-resize="true" delay="15"
+                            steps="7" font-size="{from:0.12, to:0.04}"></tag-cloud>
+                    </div>                   
+                    <div class="col-5">
+                        <div id="month-topics"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="overflow-y: scroll; height:400px;" class="col-12">
+        <div class="container inline-division">
+            <div class="card" ng-repeat="item in listNews">
+                <img src="/images/logo/{{item.source}}.png" />
+                <div class="content">
+                    <span class="title">
+                        <a href="#">{{item.topic}}</a>
+                    </span>
+                    <span class="resource">
+                        {{item.agency}}
+                    </span>
+                    <span class="abstract">
+                        {{item.body}}
+                    </span>
+                    <span class="date">
+                        {{item.formattedPublishDateTime}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

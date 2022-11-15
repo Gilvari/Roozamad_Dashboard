@@ -1,0 +1,36 @@
+var apiBaseUrl = "http://185.208.181.61:8080";
+var apis = {
+    'agencies': apiBaseUrl + "/ui/agency/list",
+    'newsInformation': apiBaseUrl + "/ui/kpi/homepage",
+    'search': apiBaseUrl + "/ui/news/search",
+
+    'recentNews': apiBaseUrl + "/ui/news/recent",    
+    'getArticleData': apiBaseUrl + "/ui/news/article",
+    // 'getNerData': "/api/article/ner.json",
+    'getNerData':  apiBaseUrl + "/ui/news/ner",
+    // 'getArticleData':"/api/article/data.json",
+    'getTopicsData': apiBaseUrl + "/ui/category/count",
+    'getProfleTopicsData':apiBaseUrl + '/ui/subjectprofile/news/count',
+    //apiBaseUrl + "/ui/news/topics",
+    "getProfileList":apiBaseUrl + '/ui/subjectprofile/list',
+    'login': apiBaseUrl + '/ui/auth/signin',
+    'keyPherase':apiBaseUrl +'/ui/news/keyphrases',
+    'getCloudWord':apiBaseUrl + '/ui/news/term/frequency',
+    'getListNews': apiBaseUrl + '/ui/social/news/recent',
+    'getListNewsBySearch': '/api/dashboard/listNews.json',
+    'getSocialInfo': '/api/social/getSocialInfo.json',
+    'getProfileData': apiBaseUrl +'/ui/subjectprofile/getprofile',
+    'getQuoteData': apiBaseUrl +'/ui/subjectprofile/quote',
+    'searchProfile': '/api/profile/searchProfile.json',
+    'searchForMap': apiBaseUrl +'/ui/map/provinces',
+    'getBulletinSet': '/api/bulletin/getBulletinSet.json',
+    'update': '/api/bulletin/update',
+    'deleteBulletin': '/api/bulletin/deleteBulletin',
+    'searchBulletin': '/api/bulletin/searchBulletin.json',
+    'getAgencyData': '/api/bulletin/agency.json',
+    'getCategoryList': '/api/bulletin/category.json',
+    'sendTicket': '/api/support/sendTicket',
+    'getSimilar': apiBaseUrl+'/ui/news/similar',
+};
+var agencies = [];
+

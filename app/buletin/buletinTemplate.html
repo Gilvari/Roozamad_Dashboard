@@ -1,0 +1,60 @@
+<div class="row" ng-controller="buletinController as vm">
+    <div class="container">
+        <div class="col-12">
+            <form ng-submit="vm.search(frm)">
+
+                <lable>عنوان:
+                    <span class="flex margin-bottom-5">
+                        <input class="k-rtl k-input base-input base-width" type="text" placeholder="عنوان" ng-model="vm.bulletinModel.title">
+                    </span>
+                </lable>
+
+                <lable>کلمه کلیدی:
+                    <span class="flex margin-bottom-5">
+                        <input class="k-rtl k-input base-input base-width" type="text" placeholder="کلمه کلیدی"
+                            ng-model="vm.bulletinModel.keyword">
+                    </span>
+                </lable>
+                <lable>تاریخ شروع:
+                    <span class="flex margin-bottom-5">
+                        <adm-dtp class="base-width" ng-model='vm.bulletinModel.startDate' options='{calType: "jalali", format: "YYYY/MM/DD", default: "today"}'></adm-dtp>
+                    </span>
+                </lable>
+
+                <lable>تاریخ پایان:
+                    <span class="flex margin-bottom-5">
+                        <adm-dtp class="base-width" ng-model='vm.bulletinModel.endDate' options='{calType: "jalali", format: "YYYY/MM/DD", default: vm.lastWeekDisplayPadded}'></adm-dtp>
+                    </span>
+                </lable>
+
+                <lable>دسته:
+                    <span class="flex margin-bottom-5">
+                        <select id="category-dropdown" class="k-rtl base-width" kendo-drop-down-list k-options="vm.dropDownOptions"
+                            ng-model="vm.bulletinModel.category"></select>
+                    </span>
+                </lable>
+
+                <lable>خبرگزاری:
+                    <span class="flex margin-bottom-5">
+                        <select id="agency-select" class="base-width" kendo-multi-select k-options="vm.multiOptions"
+                            ng-model="vm.bulletinModel.agencies"></select>
+                    </span>
+                </lable>
+                <br />
+                <button kendo-button ng-click="vm.update()" class="base-button"><i> بروزرسانی </i></button>
+                <button kendo-button ng-click="vm.searchBulletin()" class="base-button"><i> جستجو </i></button>
+
+            </form>
+            <br>
+            <div class="col-6 col-content">
+                <a ng-click="vm.addBulletin()"><i class="grid-button fa fa-plus"></i></a>
+                <a ng-click="vm.editBulletin()"><i class="fa grid-button fa-edit fa-fw"></i></a>
+                <a ng-click="vm.deleteBulletin()"><i class="fa grid-button fa-trash-o fa-fw"></i></a>
+                <kendo-grid id="bulletin-result" class="k-rtl" options="vm.mainGridOptions"></kendo-grid>
+            </div>
+            <div class="col-6 col-content">
+                <kendo-grid id="bulletin-agency" class="k-rtl" options="vm.agencyGridOptions"></kendo-grid>
+            </div>
+        </div>
+    </div>
+</div>

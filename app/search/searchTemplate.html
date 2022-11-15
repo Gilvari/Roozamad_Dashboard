@@ -1,0 +1,28 @@
+<div class="row" ng-controller="searchController as vm">
+    <div class="container">
+        <div class="col-12">
+            <form ng-submit="vm.search(frm)">
+                <span class="flex margin-bottom-5">
+                    <input class="k-rtl k-input base-input" type="text" placeholder="جستجو" ng-model="vm.searchKeyword">
+                    <button style="width: 20%;" class="k-button" type="submit">جستجو</button>
+                </span>
+
+                <span class="flex margin-bottom-5">
+                    <select id="agency-dropdown" class="k-rtl base-width" kendo-drop-down-list k-options="vm.dropDownOptions"
+                        ng-model="vm.agency"></select>
+                    <adm-dtp ng-model='vm.startDate' options='{calType: "jalali", format: "YYYY/MM/DD", default: vm.lastWeekDisplayPadded}'></adm-dtp>
+                    <adm-dtp ng-model='vm.endDate' options='{calType: "jalali", format: "YYYY/MM/DD", default: "today"}'></adm-dtp>
+
+                </span>
+                <span class="flex margin-bottom-5">
+                    <input class="k-rtl k-input base-input" type="text" placeholder="دسته بندی" ng-model="vm.category">
+                </span>
+                <br />
+                <div class="col-title">لیست عبارات</div>
+                <div class="col-content">
+                    <kendo-grid id="search-result" class="k-rtl" options="vm.mainGridOptions"></kendo-grid>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
