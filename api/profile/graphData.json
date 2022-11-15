@@ -1,0 +1,178 @@
+{
+    "nodes": [{
+            "id": "n0",
+            "label": "رئیس جمهور",
+            "x": 0,
+            "y": 0,
+            "size": 3
+        },
+        {
+            "id": "n1",
+            "label": "وزرات نیرو",
+            "x": 3,
+            "y": 1,
+            "size": 2
+        },
+        {
+            "id": "n2",
+            "label": "سازمان آب",
+            "x": 1,
+            "y": 3,
+            "size": 1
+        },
+        {
+            "id": "n3",
+            "label": "وزارت فناوری",
+            "x": 1,
+            "y": 3,
+            "size": 2
+        },
+        {
+            "id": "n4",
+            "label": "وزارت کشور",
+            "x": 4,
+            "y": 3,
+            "size": 4
+        },
+        {
+            "id": "n5",
+            "label": "جهاد دانشگاهی",
+            "x": 3,
+            "y": 4,
+            "size": 5
+        },
+        {
+            "id": "n6",
+            "label": "صداو سیما",
+            "x": 4,
+            "y": 1,
+            "size": 3
+        },
+        {
+            "id": "n7",
+            "label": "دانشگاه",
+            "x": 2,
+            "y": 3,
+            "size": 2
+        },
+        {
+            "id": "n8",
+            "label": "تهران",
+            "x": 2,
+            "y": 3,
+            "size": 2
+        },
+        {
+            "id": "n9",
+            "label": "شریف",
+            "x": 2,
+            "y": 3,
+            "size": 2
+        },
+        {
+            "id": "n10",
+            "label": "امیرکبیر",
+            "x": 2,
+            "y": 3,
+            "size": 2
+        },
+        {
+            "id": "n11",
+            "label": "علم و صنعت",
+            "x": 2,
+            "y": 3,
+            "size": 2
+        }
+    ],
+    "edges": [{
+            "id": "e0",
+            "source": "n0",
+            "target": "n1"
+        },
+        {
+            "id": "e1",
+            "source": "n1",
+            "target": "n2"
+        },
+        {
+            "id": "e2",
+            "source": "n2",
+            "target": "n0"
+        },
+        {
+            "id": "e3",
+            "source": "n3",
+            "target": "n1"
+        },
+        {
+            "id": "e4",
+            "source": "n4",
+            "target": "n3"
+        },
+        {
+            "id": "e5",
+            "source": "n5",
+            "target": "n2"
+        },
+        {
+            "id": "e6",
+            "source": "n6",
+            "target": "n4"
+        },
+        {
+            "id": "e7",
+            "source": "n6",
+            "target": "n2"
+        },
+        {
+            "id": "e8",
+            "source": "n3",
+            "target": "n4"
+        },
+        {
+            "id": "e9",
+            "source": "n6",
+            "target": "n1"
+        },
+        {
+            "id": "e10",
+            "source": "n5",
+            "target": "n1"
+        },
+        {
+            "id": "e11",
+            "source": "n3",
+            "target": "n7"
+        },
+        {
+            "id": "e12",
+            "source": "n8",
+            "target": "n5"
+        },
+        {
+            "id": "e13",
+            "source": "n8",
+            "target": "n7"
+        },
+        {
+            "id": "e14",
+            "source": "n9",
+            "target": "n7"
+        },
+        {
+            "id": "e15",
+            "source": "n10",
+            "target": "n7"
+        },
+        {
+            "id": "e16",
+            "source": "n7",
+            "target": "n11"
+        },
+        {
+            "id": "e17",
+            "source": "n7",
+            "target": "n8"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+[{
+    "category": "موافق",
+    "value": 70,
+    "color": "#8bc34a"
+}, {
+    "category": "مخالف",
+    "value": 25,
+    "color": "#e36488"
+}, {
+    "category": "خنثی",
+    "value": 5,
+    "color": "#aaaaaa"
+}]
